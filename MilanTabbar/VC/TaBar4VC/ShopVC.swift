@@ -160,7 +160,7 @@ extension ShopVC: UITableViewDelegate, UITableViewDataSource {
 extension ShopVC: ShopTableViewDelegate {
     func useBtnTapped(_ sender: UIButton) {
         
-        if (vc.myMoney - shopData[sender.tag].price) >= 0 && vc.index != sender.tag {
+        if vc.index != sender.tag {
             for cell in tableView.visibleCells as! [ShopTableViewCell] {
                 cell.clearBtn.isUserInteractionEnabled = false
             }
