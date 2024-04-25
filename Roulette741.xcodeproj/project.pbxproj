@@ -57,6 +57,7 @@
 		5CC45AC42BD949650061BEE7 /* SpinningImageAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC45AC32BD949650061BEE7 /* SpinningImageAnimator.swift */; };
 		5CC45AC62BD949C80061BEE7 /* AnimUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC45AC52BD949C80061BEE7 /* AnimUtility.swift */; };
 		5CC45AC82BDA64600061BEE7 /* CustomStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC45AC72BDA64600061BEE7 /* CustomStatisticView.swift */; };
+		5CC45ACA2BDAD7230061BEE7 /* ScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC45AC92BDAD7230061BEE7 /* ScreenVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,7 @@
 		5CC45AC32BD949650061BEE7 /* SpinningImageAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinningImageAnimator.swift; sourceTree = "<group>"; };
 		5CC45AC52BD949C80061BEE7 /* AnimUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimUtility.swift; sourceTree = "<group>"; };
 		5CC45AC72BDA64600061BEE7 /* CustomStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStatisticView.swift; sourceTree = "<group>"; };
+		5CC45AC92BDAD7230061BEE7 /* ScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				5C5A7FE02BCEF190008B8CF8 /* BeginViewController.swift */,
+				5CC45AC92BDAD7230061BEE7 /* ScreenVC.swift */,
 			);
 			path = BeginVC;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				5CC45AC62BD949C80061BEE7 /* AnimUtility.swift in Sources */,
 				5C22BB5F2BD50CD400728014 /* Const.swift in Sources */,
 				04D506A7271FF73C00A1BF94 /* VC1.swift in Sources */,
+				5CC45ACA2BDAD7230061BEE7 /* ScreenVC.swift in Sources */,
 				5C22BB5D2BD50A9000728014 /* CustomResultView.swift in Sources */,
 				5C5A7FF82BD034C8008B8CF8 /* VC1InfoTableViewCell.swift in Sources */,
 				5C5A7FF62BD0339C008B8CF8 /* VC1Info.swift in Sources */,

@@ -13,12 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Thread.sleep(forTimeInterval: 3.0)
         
         let nav = UINavigationController(rootViewController: AddItemTabbar())
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+        // Override point for customization after application launch.
         return true
     }
+
 
     // MARK: UISceneSession Lifecycle
 
