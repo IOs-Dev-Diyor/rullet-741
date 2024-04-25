@@ -54,8 +54,8 @@ class VC1: UIViewController {
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: view.frame.width - 100),
-            imageView.heightAnchor.constraint(equalToConstant: view.frame.width - 100),
+            imageView.widthAnchor.constraint(equalToConstant: Const.wd/1.8),
+            imageView.heightAnchor.constraint(equalToConstant: Const.wd/1.8),
         ])
 
         NSLayoutConstraint.activate([

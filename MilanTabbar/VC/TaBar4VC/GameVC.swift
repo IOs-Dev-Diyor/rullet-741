@@ -21,7 +21,7 @@ class GameVC: UIViewController {
            }
        }
      
-    var myMoney: Int = 10000
+    var myMoney: Int = 100
     
 //    {
 //        get {
@@ -40,7 +40,7 @@ class GameVC: UIViewController {
     lazy var randomIndex = Int.random(in: 0..<numbersArray.count)
     lazy var randomNumber = numbersArray[randomIndex]
     var selectNumber = 0
-    
+    var oddCount = 0
     let backImage = CustomBackImageView()
     
     let backBtn = CustomBackButton()
@@ -200,7 +200,7 @@ class GameVC: UIViewController {
             totalMoneyLbl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
             totalMoneyLbl.widthAnchor.constraint(equalToConstant: Const.wd/2),
             totalMoneyLbl.heightAnchor.constraint(equalToConstant: Const.wd/9),
-            totalMoneyLbl.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -20),
+            totalMoneyLbl.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -10),
             
             resultBtn.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             resultBtn.widthAnchor.constraint(equalToConstant: 33),
@@ -210,7 +210,7 @@ class GameVC: UIViewController {
             oddLbl.leftAnchor.constraint(equalTo: totalMoneyLbl.rightAnchor, constant: 0),
             oddLbl.widthAnchor.constraint(equalToConstant: Const.wd/2),
             oddLbl.heightAnchor.constraint(equalToConstant: Const.wd/9),
-            oddLbl.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -20),
+            oddLbl.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -10),
             
         ])
     }
@@ -412,6 +412,11 @@ class GameVC: UIViewController {
         resultInfo.setImage(UIImage(named: "\(gameData[index].imageNames[coinSelect])"), for: .normal)
         resultInfo.setTitle("You lost-\(coinValue[coinSelect])!".uppercased(), for: .normal)
         
+        if currentButtonTag == 5 {
+            oddCount += 1
+            oddLbl.text = "odd: \(oddCount)".uppercased()
+        }
+        
         sender.isSelected = !sender.isSelected
 
     }
@@ -516,18 +521,56 @@ class GameVC: UIViewController {
 //
 //        totalMoneyLbl.text = "total: \(myMoney.update)"
 //    }
-    func deductMoneyAndUpdateUI() {
-         myMoney = 0
+    func deductMoneyAndUpdateUI() /*-> ClosedRange<Int>?*/ {
+//        let selectedNumberRange1 = (1...18)
+//        let selectedNumberRange2 = (19...36)
+//        let selectedNumberRange3 = (1...12)
+//        let selectedNumberRange4 = (13...24)
+//        let selectedNumberRange5 = (25...36)
+//
+//
+//        switch selectNumber {
+//        case 1:
+//            if selectedNumberRange1 ~= randomNumber {
+//                        return selectedNumberRange1
+//                    }
+//        case 6:
+//            if selectedNumberRange2 ~= randomNumber {
+//                        return selectedNumberRange2
+//                    }
+//        case 7:
+//            if selectedNumberRange3 ~= randomNumber {
+//                        return selectedNumberRange3
+//                    }
+//        case 8:
+//            if selectedNumberRange4 ~= randomNumber {
+//                        return selectedNumberRange4
+//                    }
+//        case 9:
+//            if selectedNumberRange5 ~= randomNumber {
+//                        return selectedNumberRange5
+//                    }
+//
+//        default:
+//            break
+//
+//        }
+        
+//        let colors = Colors()
+        print("\(randomNumber)")
         if selectNumber == randomNumber {
             myMoney += coinValue[coinSelect]
-            resultInfo.setTitle("you win-\(myMoney)!", for: .normal)
-            resultInfo.setTitleColor(UIColor.yellow, for: .normal)
+            resultInfo.setTitle("you win-\(coinValue[coinSelect])!".uppercased(), for: .normal)
+            resultInfo.setTitleColor(UIColor.systemYellow, for: .normal)
+//            resultInfo.layer.insertSublayer(colors.gradientLayer, at: 0)
         } else {
             myMoney -= coinValue[coinSelect]
-            resultInfo.setTitle("you lost-\(myMoney)!", for: .normal)
+            resultInfo.setTitle("you lost-\(coinValue[coinSelect])!".uppercased(), for: .normal)
             resultInfo.setTitleColor(UIColor.customRed, for: .normal)
         }
+        totalMoneyLbl.text = "total: \(myMoney)".uppercased()
         
+//        return nil
     }
 
     func resetButtonImages() {

@@ -85,7 +85,7 @@ class QuizVC: UIViewController {
         super.viewDidLayoutSubviews()
 
         NSLayoutConstraint.activate([
-            backView.topAnchor.constraint(equalTo: view.topAnchor, constant: Const.hd / 5),
+            backView.topAnchor.constraint(equalTo: view.topAnchor, constant: Const.hd / 4),
             backView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15),
             backView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15),
             backView.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -Const.hd / 12),
@@ -137,13 +137,13 @@ class QuizVC: UIViewController {
 
     func counterBtns() {
         let buttonCount = quizData.count
-        let spacing: CGFloat = 8
+        let spacing: CGFloat = 12
         let buttonWidth = (UIScreen.main.bounds.width - CGFloat(buttonCount + 1) * spacing) / CGFloat(buttonCount)
 
         for i in 0..<buttonCount {
             let button = UIButton(type: .system)
             button.frame = CGRect(x: spacing + CGFloat(i) * (buttonWidth + spacing),
-                                  y: Const.hd / 9.5,
+                                  y: Const.hd / 8,
                                   width: buttonWidth,
                                   height: buttonWidth)
             button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
